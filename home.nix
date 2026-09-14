@@ -523,5 +523,6 @@ final_space = true
     quickshell
     qt6.qtwayland
     nerd-fonts.jetbrains-mono
+    sublime4
   ];
 }
