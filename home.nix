@@ -247,6 +247,34 @@
     };
   };
 
+
+# Sublime Text Settings
+  xdg.configFile."sublime-text/Packages/User/Preferences.sublime-settings".text = builtins.toJSON {
+    font_face = "JetBrains Mono";
+    font_size = 16;
+    theme = "Default Dark.sublime-theme";
+    color_scheme = "auto";
+    tab_size = 2;
+    translate_tabs_to_spaces = true;
+    trim_trailing_white_space_on_save = true;
+    # Paste your remaining key/value pairs from macOS here
+    index_files = true;
+  };
+
+  # Sublime Text Keymaps
+  # Note: Convert 'super+' (Cmd) modifiers from macOS to 'ctrl+' or 'alt+' for Linux if desired
+  xdg.configFile."sublime-text/Packages/User/Default (Linux).sublime-keymap".text = builtins.toJSON [
+    {
+      keys = [ "ctrl+shift+r" ];
+      command = "reindent";
+    }
+  ];
+
+
+
+
+
+
   programs.plasma = {
     enable = true;
     workspace = {
