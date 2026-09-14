@@ -42,6 +42,7 @@
           ./hosts/nixos/default.nix
           {
             networking.hostName = "nixos";
+            home-manager.users.chh = { imports = [ ./hosts/nixos/home.nix ]; };
           }
         ];
       };
@@ -54,11 +55,10 @@
           ./hosts/Gen2/default.nix
           {
             networking.hostName = "Gen2";
+            home-manager.users.chh = { imports = [ ./hosts/Gen2/home.nix ]; };
           }
         ];
       };
     };
   };
 }
-
-
