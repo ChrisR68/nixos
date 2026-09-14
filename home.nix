@@ -250,10 +250,11 @@
 
 # Sublime Text Settings
   xdg.configFile."sublime-text/Packages/User/Preferences.sublime-settings".text = builtins.toJSON {
+    color_scheme = "Packages/Color Scheme - Default/Monokai.sublime-color-scheme";
     font_face = "JetBrains Mono";
-    font_size = 16;
+    font_size = 10;
     theme = "Default Dark.sublime-theme";
-    color_scheme = "auto";
+    ui_scale = 1.25;
     tab_size = 2;
     translate_tabs_to_spaces = true;
     trim_trailing_white_space_on_save = true;
