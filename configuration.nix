@@ -40,19 +40,6 @@
     LC_TIME = "de_CH.UTF-8";
   };
 
-  fileSystems."/home/chh/dev01" = {
-    fsType = "9p";
-    device = "share";
-    options = [
-      "trans=virtio"
-      "version=9p2000.L"
-      "rw"
-      "nofail"
-      "_netdev"
-      "uid=1000"
-      "gid=100"
-    ];
-  };
 
   # Enable the X11 windowing system.
   # You can disable this if you're only using the Wayland session.

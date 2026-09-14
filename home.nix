@@ -288,6 +288,10 @@
       };
     };
 
+
+    configFile."kwinrc"."Plugins"."zoomEnabled" = false;
+    configFile."kwinrc"."Effect-zoom"."InitalZoom" = 1.0;
+    configFile."kwinrc"."Effect-zoom"."ZoomFactor" = 1.0;
     configFile."ksmserverrc"."General"."loginMode" = "emptySession";
     configFile."kwinrc"."org.kde.kdecoration2"."library" = "org.kde.kwin.aurorae";
     configFile."kwinrc"."org.kde.kdecoration2"."theme" = "kwin4_decoration_qml_plastik";
