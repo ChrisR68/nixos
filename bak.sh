@@ -4,15 +4,16 @@ set -e
 SOURCE_DIR="/etc/nixos"
 TARGET_DIR="$HOME/nixos-config"
 
-# Optional: use a custom commit message passed as an argument, or fallback to timestamp
 COMMIT_MSG="${1:-Update NixOS configuration on $(date '+%Y-%m-%d %H:%M:%S')}"
 
-echo "==> Copying .nix files from $SOURCE_DIR to $TARGET_DIR..."
-sudo cp -r "$SOURCE_DIR"/*.nix "$TARGET_DIR"/
-sudo cp -r "$SOURCE_DIR"/*.lock "$TARGET_DIR"/
+echo "==> Copying configuration files from $SOURCE_DIR to $TARGET_DIR..."
+sudo cp -a "$SOURCE_DIR"/*.nix "$TARGET_DIR"/
+if [ -f "$SOURCE_DIR"/flake.lock ]; then
+  sudo cp -a "$SOURCE_DIR"/flake.lock "$TARGET_DIR"/
+fi
 
 echo "==> Setting user ownership for copied files..."
-sudo chown -R "$USER":"$GROUP" "$TARGET_DIR"
+sudo chown -R "$USER":users "$TARGET_DIR"
 
 cd "$TARGET_DIR"
 
@@ -23,7 +24,7 @@ if [[ -z $(git status --porcelain) ]]; then
 fi
 
 echo "==> Staging files..."
-git add .
+git add -A
 
 echo "==> Committing changes..."
 git commit -m "$COMMIT_MSG"
@@ -32,3 +33,4 @@ echo "==> Pushing to GitHub..."
 git push
 
 echo "==> Done successfully!"
+
