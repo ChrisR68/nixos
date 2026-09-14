@@ -156,11 +156,11 @@
     spice-vdagent
   ];
 
-  home-manager.useUserPackages = true;
-  home-manager.useGlobalPkgs = true;
-  home-manager.backupFileExtension = "backup";
-  home-manager.extraSpecialArgs = { inherit (config._module.specialArgs) inputs; };
-  home-manager.users.chh = import ./home.nix;
+  #home-manager.useUserPackages = true;
+  #home-manager.useGlobalPkgs = true;
+  #home-manager.backupFileExtension = "backup";
+  #home-manager.extraSpecialArgs = { inherit (config._module.specialArgs) inputs; };
+  #home-manager.users.chh = import ./home.nix;
 
 
   fonts.packages = with pkgs; [
